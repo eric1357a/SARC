@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/item_view_border">
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/res_img"
+        android:layout_marginEnd="52dp"
+        android:layout_toStartOf="@+id/linearLayout" />
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="70dp"
+        android:id="@+id/res_img"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/res_img"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/res_name"
+            android:textColor="@color/light_green"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Restaurant Name"
+            android:maxLines="1"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/res_desc"
+            android:maxLines="2"
+            android:textSize="16dp"
+            android:textColor="@color/color_silver"
+            android:text="Description Description Description Description Description Description Description "
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

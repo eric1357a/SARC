@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/view_1"
+        android:orientation="horizontal">
+
+        <app.sarc.com.sarc.Frameworks.TouchHighlightImageButton
+            android:layout_width="170dp"
+            android:layout_height="250dp"
+            android:id="@+id/Res_img"
+            android:src="@mipmap/ic_launcher"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:theme="@style/join_btn"
+            android:text="Book"
+            android:textSize="18dp"
+            android:id="@+id/book_btn"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textSize="16dp"
+        android:autoLink="web|email|phone"
+        android:scrollbars="vertical"
+        android:nestedScrollingEnabled="true"
+        android:textColor="@color/black"
+        android:id="@+id/Res_info"/>
+
+
+
+</RelativeLayout>
