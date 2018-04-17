@@ -27,5 +27,12 @@ public class APIResponse {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
+    public void getRecentList(Observer<RestaurantList> observer){
+        HttpMethods.getInstance().getServiceAPI().getResList()
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
+    }
 
 }

@@ -18,4 +18,8 @@ public interface ServiceAPI {
 
     @GET("/FYP/APICalling/GetOne.php")
     Observable<RestaurantInfo> getResDetail(@Query("id") String id);
+
+    @GET("/FYP/APICalling/GetRecent.php")
+    Observable<RestaurantList>getRecentList();
 }
+

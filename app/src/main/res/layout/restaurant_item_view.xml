@@ -6,15 +6,6 @@
     android:layout_marginTop="5dp"
     android:background="@drawable/item_view_border">
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/linearLayout"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="69dp" />
-
     <ImageView
         android:layout_width="65dp"
         android:layout_height="70dp"
