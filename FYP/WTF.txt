@@ -1,0 +1,61 @@
+API
+1. Get all restaurant info
+2. Get one restaurant info
+3. Get recent restaurant history
+4. Insert new comment
+5. flag inapporaiate comment
+6. Add bookmark to restaurant
+
+(ADMIN)
+1. Delete comment
+2. Delete restaurant
+3. Insert new restaurant
+4. 
+
+
+Android
+1. Login / register
+2. 
+
+
+(Both)
+1. Search restaurant via (Name / Type / How positive / location)
+2. See comment
+
+(Logged in)
+
+1. Show bookmarked restaurant
+2. Give comment
+3. BookMark restaurant
+4. Book restaurant -> add to calendar
+
+(ADMIN)
+1. Delete comment
+2. Delete restaurant
+3. Insert new restaurant
+
+DB
+1. Restaurant{
+	restaurant_id INT UNIQUE PK,
+	restaurant_info VARCHAR,
+	restaurant_lat float,
+	restaurant_long float,
+	restaurant_img varcahar
+	}
+	
+2. Restaurant_Comment{
+	comment_id INT UNIQUE PK,
+	comment_content VARCHAR
+	restaurant_id INT FK
+	post_date date
+	}
+CREATE TABLE `FYP_DB`.`Restaurant_comment` ( `comment_id` INT NOT NULL AUTO_INCREMENT , `comment_content` VARCHAR(1000) NOT NULL , `restaurant_id` INT NOT NULL , `post_date` DATE NOT NULL , PRIMARY KEY (`comment_id`)) ENGINE = InnoDB;
+
+3. Client{
+	client_id INT UNIQUE PK,
+	client_name varchar,
+	client_email varchar,
+	client_pwd varchar, ->> MD5 Hash
+	client_bookmarked ->> return with restaurant_id
+	} 
+CREATE TABLE `FYP_DB`.`Client` ( `client_id` INT NOT NULL AUTO_INCREMENT , `client_name` VARCHAR(255) NOT NULL , `client_email` VARCHAR(255) NOT NULL , `client_pwd` VARCHAR(255) NOT NULL , PRIMARY KEY (`client_id`)) ENGINE = InnoDB;
