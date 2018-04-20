@@ -3,20 +3,27 @@
         private $conn;
         private $table_name = "Restaurant";
 
-        public $restaurant_id;
-        public $restaurant_name;
-        public $restaurant_info;
-        public $restaurant_longitude;
-        public $restaurant_latitude;
-        public $restaurant_comment;
-        public $imgSrc;
+        public $id;
+        public $name;
+        public $address;
+        public $price;
+        public $type1;
+        public $type2;
+        public $type3;
+		public $type4;
+		public $region;
+		public $avg_price;
+		public $simp_type;
+		public $Districts;
+		public $lon;
+		public $lat;
 
         public function __construct($db){
             $this->conn = $db;
         }
 
         function getAllRestaurantInfo(){
-            $query = "SELECT * FROM " . $this->table_name . " ORDER BY restaurant_id DESC";
+            $query = "SELECT * FROM Restaurant ORDER BY id ASC ";
             // prepare query statement
             $stmt = $this->conn->prepare($query);
 
@@ -29,7 +36,7 @@
 		function getOneInfo(){
  
     		// query to read single record
-    		$query = "SELECT * FROM " . $this->table_name . " WHERE restaurant_id = ? LIMIT 0,1";
+    		$query = "SELECT * FROM " . $this->table_name . " WHERE id = ? LIMIT 0,1";
  
     		// prepare query statement
     		$stmt = $this->conn->prepare( $query );
@@ -44,13 +51,20 @@
     		$row = $stmt->fetch(PDO::FETCH_ASSOC);
  
    			// set values to object properties
-    		$this->restaurant_id = $row['restaurant_id'];
-    		$this->restaurant_name = $row['restaurant_name'];
-    		$this->restaurant_info = $row['restaurant_info'];
-    		$this->restaurant_latitude = $row['restaurant_latitude'];
-    		$this->restaurant_longitude = $row['restaurant_longitude'];
-    		$this->restaurant_comment = $row['restaurant_comment'];
-    		$this->restaurant_img = $row['imgSrc'];
+    		$this->id = $row['id'];
+    		$this->name = $row['name'];
+    		$this->address = $row['address'];
+    		$this->price = $row['price'];
+    		$this->type1 = $row['type1'];
+    		$this->type2 = $row['type2'];
+    		$this->type3 = $row['type3'];
+			$this->type4 = $row['type4'];
+			$this->region = $row['region'];
+			$this->avg_price = $row['avg_price'];
+			$this->simp_type = $row['simp_type'];
+			$this->Districts = $row['Districts'];
+			$this->lon = $row['lon'];
+			$this->lat = $row['lat'];
 		}
     }
 ?>

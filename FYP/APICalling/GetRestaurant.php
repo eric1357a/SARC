@@ -22,13 +22,20 @@ if($countNum > 0){
         extract($row);
  
         $restaurant_items = array(
-            "id" => $restaurant_id,
-            "name" => $restaurant_name,
-            "description" => html_entity_decode($restaurant_info),
-            "latitude" => $restaurant_latitude,
-            "longitude" => $restaurant_longitude,
-            "comment" => html_entity_decode($restaurant_comment),
-            "imgSrc" => $imgSrc
+            "id" => $id,
+            "name" => $name,
+            "address" => html_entity_decode($address),
+            "price" => $price,
+            "type1" => $type1,
+			"type2" => $type2,
+			"type3" => $type3,
+			"type4" => $type4,
+			"region" => $region,
+			"avg_price" => $avg_price,
+            "simp_type" => html_entity_decode($restaurant_comment),
+			"Districts" => $Districts,
+			"lon" => $lon,
+            "lat" => $lat
         );
  
         array_push($restaurants_arr["restaturant_list"], $restaurant_items);

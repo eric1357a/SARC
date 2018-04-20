@@ -1,5 +1,5 @@
 <?php
-    class Restaurant{
+    class Comment{
         private $conn;
         private $table_name = "Restaurant_comment";
 
@@ -13,7 +13,7 @@
         }
 
         function getAllComment(){
-            $query = "SELECT * FROM " . $this->table_name . " ORDER BY comment_id DESC";
+            $query = "SELECT * FROM " . $this->table_name . " ORDER BY post_date ASC";
             // prepare query statement
             $stmt = $this->conn->prepare($query);
 
@@ -24,15 +24,24 @@
         }
         
 		function getOneResInfo(){
- 
+			$query = "SELECT * FROM " . $this->table_name . " WHERE restaurant_id = ? ORDER BY post_date ASC";
+            // prepare query statement
+            $stmt = $this->conn->prepare($query);
+			// bind id of product to be updated
+    		$stmt->bindParam(1, $this->id);
+            // execute query
+            $stmt->execute();
+
+            return $stmt;
+ /*
     		// query to read single restaurant record
-    		$query = "SELECT * FROM " . $this->table_name . " WHERE restaurant_id = ? LIMIT 0,10";
+    		$query = "SELECT * FROM " . $this->table_name . " WHERE restaurant_id = ? LIMIT 0,1";
  
     		// prepare query statement
     		$stmt = $this->conn->prepare( $query );
  
     		// bind id of product to be updated
-    		$stmt->bindParam(1, $this->restaurant_id);
+    		$stmt->bindParam(1, $this->id);
  
     		// execute query
     		$stmt->execute();
@@ -44,7 +53,8 @@
     		$this->comment_id = $row['comment_id'];
     		$this->comment_content = $row['comment_content'];
     		$this->restaurant_id = $row['restaurant_id'];
-    		$this->post_date = $row['post_date'];
+			$this->post_date = $row['post_date'];
+			*/
 		}
 		function insertComment(){
 			 $query = "INSERT INTO
